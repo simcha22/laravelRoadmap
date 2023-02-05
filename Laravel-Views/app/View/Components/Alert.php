@@ -11,9 +11,14 @@ class Alert extends Component
      *
      * @return void
      */
-    public function __construct()
+
+    public $name;
+    public $type;
+
+    public function __construct($name, $type)
     {
-        //
+        $this->name = $name;
+        $this->type = $type;
     }
 
     /**
@@ -23,6 +28,12 @@ class Alert extends Component
      */
     public function render()
     {
-        return view('components.alert');
+        return function (array $data) {
+            // $data['componentName'];
+            // $data['attributes'];
+            // $data['slot'];
+
+            return '<div>Components content '.$this->name.'</div>';
+        };
     }
 }

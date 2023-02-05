@@ -18,12 +18,25 @@
             body {
                 font-family: 'Nunito', sans-serif;
             }
+
+            .main-div{
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                justify-content: center;
+                align-items: center;
+            }
         </style>
+
+        @php
+        $name = 'simcha';
+        @endphp
     </head>
     <body class="antialiased">
-        <div class="relative flex flex-rows items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+    <div class="main-div">
             <h1>Home Page</h1>
-            <x-alert></x-alert>
-        </div>
+
+            <x-alert :name="$name" type="error"></x-alert>
+    </div>
     </body>
 </html>
